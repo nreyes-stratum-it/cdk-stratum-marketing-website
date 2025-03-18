@@ -36,6 +36,7 @@ export class StratumMarketingWebsiteStack extends cdk.Stack {
                 origin: new origins.S3Origin(siteBucket),
                 viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
             },
+            defaultRootObject: 'index.html',
         });
 
         new route53.ARecord(this, 'SiteAliasRecord', {
